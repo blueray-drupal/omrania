@@ -5,6 +5,7 @@ import Hero from './pages/home/Hero';
 import LogoIntro from './pages/home/LogoIntro';
 import WhyOmrania from './pages/home/WhyOmrania';
 import AboutHome from './pages/home/AboutHome';
+import HomeProducts from './pages/home/HomeProducts';
 import Brands from './pages/home/Brands';
 import Projects from './pages/home/Projects';
 import Accreditations from './pages/home/Accreditations';
@@ -28,6 +29,7 @@ function HomePage() {
       <Hero />
       <WhyOmrania />
       <AboutHome />
+      <HomeProducts />
       <Brands />
       <Projects />
       <Accreditations />

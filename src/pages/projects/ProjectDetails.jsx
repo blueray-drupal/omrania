@@ -1,16 +1,8 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useCapabilities } from './useCapabilities';
 import { useProjects } from './useProjects';
 import './ProjectDetails.css';
-
-const CAPABILITIES = [
-  'Pipes, Fittings & Flanges',
-  'Valves & Flow Control',
-  'Pumps & Mechanical Equipment',
-  'Instrumentation & Gauges',
-  'Flexible Hoses & Joints',
-  'Fasteners & Gaskets',
-];
 
 function CalendarIcon() {
   return (
@@ -51,6 +43,7 @@ function PhoneIcon() {
 function ProjectDetails() {
   const { id } = useParams();
   const { projects, loaded } = useProjects();
+  const { title: capabilitiesTitle, items: capabilities } = useCapabilities();
   const project = projects.find((item) => item.id === id);
   const related = project
     ? projects.filter((item) => item.id !== project.id && item.sector && item.sector === project.sector)
@@ -176,18 +169,20 @@ function ProjectDetails() {
                 <h3>Interested in a Similar Project?</h3>
                 <p>Our engineering team can provide tailored supply solutions for projects of any scale and sector.</p>
                 <Link to="/quote" className="project-details__quote">Request a Quote →</Link>
-                <button type="button" className="project-details__contact">Contact Our Team</button>
+                <Link to="/contact" className="project-details__contact">Contact Our Team</Link>
               </div>
             </div>
-            <div className="project-details__capabilities">
-              <h4>Al Omrania Capabilities</h4>
-              {CAPABILITIES.map((item) => (
-                <div className="project-details__capability" key={item}>
-                  <span />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
+            {capabilities.length > 0 && (
+              <div className="project-details__capabilities">
+                <h4>{capabilitiesTitle}</h4>
+                {capabilities.map((item, index) => (
+                  <div className="project-details__capability" key={`${item}-${index}`}>
+                    <span />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </aside>
         </div>
       </div>
