@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useProductCategories } from '../../pages/products/useProductCategories';
 import './Footer.css';
 
 const LOGO_SRC = 'https://omrania10.figma.site/assets/omrania2_logo-D25BDk5f.png';
@@ -14,15 +15,9 @@ const QUICK_LINKS = [
   { label: 'Contact Us', to: '/contact' },
 ];
 
-const PRODUCT_LINKS = [
-  'Valves',
-  'Pumps',
-  'Pipes & Fittings',
-  'HVAC',
-  'Industrial Equipment',
-];
-
 function Footer() {
+  const { categories } = useProductCategories();
+
   return (
     <footer className="site-footer" dir="ltr">
       <div className="site-footer__inner">
@@ -48,8 +43,8 @@ function Footer() {
 
           <div>
             <h4>Products</h4>
-            {PRODUCT_LINKS.map((label) => (
-              <a key={label} href="#">{label}</a>
+            {categories.map((category) => (
+              <Link key={category.id} to={`/products/${category.id}`}>{category.name}</Link>
             ))}
           </div>
 
