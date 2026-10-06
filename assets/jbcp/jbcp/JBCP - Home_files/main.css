@@ -1,0 +1,764 @@
+@font-face {
+  font-family: "GE Dinar Two";
+  src: url("../GEDinarTwo-Medium.eot");
+  src: url("../GEDinarTwo-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../GEDinarTwo-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir-Book.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url("../fonts/Avenir-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-prim: #eb1e77;
+  --color-sec: #3d3d3d;
+  --bg-color-section: #f5f5f5;
+
+  --transition-period: 0.2s;
+
+  overflow-x: hidden;
+
+  scroll-padding-top: 110px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "GE Dinar Two", "sans serif";
+  overflow-x: hidden;
+}
+
+.overflown {
+  overflow: hidden;
+}
+
+/* Nav */
+
+header {
+  background-color: #eb1e77;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+}
+
+.banner_image {
+    width: 100% !important;
+}
+header > a {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 0 10px 0 !important;
+}
+
+
+.nav_logo {
+  /*width: 12rem;*/
+  width: 80% !important;
+  padding: 12px 0 12px 0;
+}
+
+/* Hero */
+
+.hero {
+  /*background: url(/web/20241003071903im_/https://www.jbcp.jo/Cancer_awareness_landing/Slider-image.jpg);*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 110px;
+}
+.mySection {
+    text-align: center;
+    background: #eb1e77c2;
+    padding: 20px 40px 20px 40px;
+    display: none;
+}
+.mySection h1, .mySection h2, .mySection h3 {
+    color: white;
+}
+
+
+.hero_content {
+    display: none;
+  padding: 240px 0;
+  color: var(--color-sec);
+  /*display: flex;*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 11;
+  /* -webkit-backdrop-filter: blur(2px);
+  -moz-backdrop-filter: blur(2px);
+  -o-backdrop-filter: blur(2px);
+  -ms-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px); */
+}
+
+/*.hero_content::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background: #00000045;*/
+    
+/*}*/
+
+@media only screen and (max-width: 670px) {
+  .hero {
+    background: url(/web/20241003071903im_/https://www.jbcp.jo/Cancer_awareness_landing/main_banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .hero_content {
+    padding: 50px 0
+  }
+  
+ .nav_logo {
+  width: 100% !important;
+  padding: 12px 15px 12px 15px;
+}
+}
+
+
+.hero_content h1 {
+  font-size: 4rem;
+  text-align: center;
+  /* color: var(--color-prim); */
+}
+
+.hero_content p {
+  margin-bottom: 20px;
+}
+
+.btn_hero {
+  padding: 5px 20px;
+  background-color: var(--color-prim);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color var(--trasnition-period),
+    background-color var(--trasnition-period);
+}
+
+.btn_hero:hover {
+  background-color: #fff;
+  color: #eb1e77;
+}
+
+.btn_hero a,
+.btn_hero2 a {
+  all: unset;
+}
+
+.btn_hero2 {
+  padding: 5px 20px;
+  background-color: var(--color-prim);
+  color: #fff;
+
+  cursor: pointer;
+  border-radius: 5px;
+  width: fit-content;
+  transition: color var(--trasnition-period),
+    background-color var(--trasnition-period);
+}
+
+.btn_hero2:hover {
+  background-color: #fff;
+  color: var(--color-prim);
+}
+
+/* Section 1 */
+
+#section-1 {
+  background-color: var(--bg-color-section);
+  direction: rtl;
+}
+
+#section_updated_one {
+    width: 80%;
+    margin: auto;
+}
+#accordionExample {
+    margin: auto;
+}
+.title {
+  color: var(--color-prim);
+  font-size: 2.5rem;
+}
+
+.description {
+  font-size: 1.5rem;
+  direction: rtl;
+  color: var(--color-sec);
+  text-align: center !important;
+}
+
+/* Section 2 */
+#section-2 {
+  direction: rtl;
+  position: relative;
+  z-index: 100;
+}
+
+#section-2 h2 {
+  color: var(--color-prim);
+}
+
+[scope="col"] {
+  background-color: #dadada !important;
+}
+
+[scope="row"] {
+  color: black;
+  position: relative;
+  cursor: pointer;
+}
+
+[scope="row"]:hover {
+  color: var(--color-prim);
+}
+
+[scope="row"]::before {
+  position: absolute;
+  content: attr(data-description);
+  display: none;
+  background-color: var(--bg-color-section);
+  width: calc(100%);
+  height: fit-content;
+  top: -20px;
+  left: -85%;
+  border: 1px solid black;
+
+  padding: 5px;
+}
+
+[scope="row"]:hover::before {
+  display: block;
+  color: black;
+}
+
+td {
+  color: var(--color-prim);
+}
+
+/* Section 3 */
+
+#section-3 {
+  position: relative;
+  background-color: var(--bg-color-section);
+  direction: rtl;
+  z-index: 99;
+}
+
+/*  Accordion */
+
+.plus-minus {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.plus-minus svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.plus-minus .pm-bg {
+  fill: var(--color-prim);
+}
+
+.plus-minus .pm-h,
+.plus-minus .pm-v {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  transform-origin: 16px 16px;
+  transition: transform 0.25s ease, stroke 0.25s ease;
+}
+
+.mx-accordion .card-header h5 a.acc-btn[aria-expanded="true"] .plus-minus .pm-bg {
+  fill: #fff;
+}
+
+.mx-accordion .card-header h5 a.acc-btn[aria-expanded="true"] .plus-minus .pm-h,
+.mx-accordion .card-header h5 a.acc-btn[aria-expanded="true"] .plus-minus .pm-v {
+  stroke: var(--color-prim);
+}
+
+.mx-accordion .card-header h5 a.acc-btn[aria-expanded="true"] .plus-minus .pm-v {
+  transform: rotate(90deg);
+}
+
+.mx-accordion .card {
+  border: 0 none;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.mx-accordion .card-header {
+  /*position: relative;*/
+  background: transparent;
+  padding: 0;
+  border: 0 none;
+}
+.mx-accordion .card-header h5 a.acc-btn {
+  color: var(--color-sec);
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 0;
+  font-weight: 600;
+  border: 0 none;
+  /* font-family: 'Gilroy'; */
+  -webkit-appearance: none;
+  display: block;
+  background: #ffffff;
+  border: 1px solid #eee;
+  padding: 20px 26px;
+  margin: -1px -1px 0;
+  position: relative;
+  border-radius: 5px;
+  text-decoration: none;
+}
+/* .mx-accordion .card-header h5 a.acc-btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-weight: 900;
+  font-size: 30px;
+  content: "+";
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: var(--color-prim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.mx-accordion .card-header h5 a.acc-btn[aria-expanded="true"] {
+  background: var(--color-prim);
+  color: #ffffff;
+}
+/* .mx-accordion .card-header h5 a.acc-btn[aria-expanded="true"]::before {
+  content: "-";
+  color: #8d8d8d;
+  background-color: #fff;
+} */
+
+.mx-accordion .card-header h5 a.border-0 {
+  border: 0;
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 0 15px 50px rgba(51, 51, 51, 0.1);
+  box-shadow: 0 15px 50px rgba(51, 51, 51, 0.1);
+  transition: box-shadow var(--trasnition-period);
+}
+
+.mx-accordion .card-header h5 a.border-0:hover {
+  box-shadow: 0 15px 50px rgba(51, 51, 51, 0.3);
+}
+
+.mx-accordion .card-body {
+  padding: 27px 25px 39px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 1.74;
+  font-size: 15px;
+  text-align: center;
+  border: 0 none;
+  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+  -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 0 0 5px 5px;
+}
+
+.tab_title {
+  color: var(--color-prim);
+  background-color: #dadada;
+}
+
+#main_header {
+  animation: scale 0.5s forwards;
+   animation-delay: 1s;
+}
+
+#up_header {
+  animation: fadeUp 0.5s forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+#down_header {
+  opacity: 0;
+  animation: fadeDown 1s forwards;
+  animation-delay: 1s;
+  display: none;
+}
+
+/* Section 4 */
+
+#section-4 {
+  width: 100%;
+}
+
+.blop_bg {
+  background-image: url(/web/20241003071903im_/https://www.jbcp.jo/Cancer_awareness_landing/assets/img/Blob\ Group.svg);
+  background-repeat: no-repeat;
+  background-position: -430px 5px;
+  background-size: cover;
+}
+.updated_section {
+    width: 50%;
+}
+
+.circles_bg {
+  background-image: url(/web/20241003071903im_/https://www.jbcp.jo/Cancer_awareness_landing/animated-shape.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media only screen and (max-width: 600px) {
+  .circles_bg {
+    background-image: url(/web/20241003071903im_/https://www.jbcp.jo/Cancer_awareness_landing/assets/img/animated-shape-mob.svg);
+  }
+  
+  #section_updated_one, .table-responsive, .updated_section {
+      width: 100%;
+  }
+  #section-5 {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+  
+}
+
+
+.page-link {
+  color: var(--color-prim);
+}
+
+.page-link:hover {
+  color: #fff;
+  background-color: #e91471;
+}
+.page-link:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+  color: var(--color-prim);
+  background-color: #fff;
+}
+
+.page-item .active {
+  color: #fff;
+  background-color: #e91471;
+  border: unset;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+::-webkit-scrollbar-track {
+  background: #e3e3e3;
+}
+::-webkit-scrollbar-corner {
+  background: #d91369;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-prim);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d91369;
+}
+
+footer {
+  min-height: 100px;
+  background-color: var(--color-prim);
+  color: #fff;
+  direction: rtl;
+}
+
+footer .numbers {
+  direction: ltr;
+}
+
+/* Modal */
+.modal {
+  z-index: 9999;
+}
+
+#doctor_img {
+  min-width: 250px;
+}
+
+/* Section 5 */
+#section-5 {
+  direction: rtl;
+  background-color: #fff;
+}
+
+.site-footer {
+  width: 100%;
+  background: #fff;
+  color: #2b2b2b;
+  min-height: 0;
+  font-family: "avenir", "Avenir", "Avenir Next", Arial, sans-serif;
+}
+
+.footer-top {
+  background-color: #eb1e77;
+  overflow: hidden;
+  line-height: 0;
+  padding: 1.2% 3.5%;
+}
+
+.footer-top img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-sponsors {
+  background: #fff;
+  line-height: 0;
+  padding: 1.2% 2% 1.4%;
+}
+
+.footer-sponsors img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: #e4e4e4;
+  padding: 0.85em 2.2% 0.95em;
+  direction: ltr;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.15em 1.6em;
+  direction: ltr;
+}
+
+.footer-social-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  text-decoration: none;
+  color: #4a4a4a;
+  white-space: nowrap;
+}
+
+.footer-social-item:hover .footer-social-text {
+  color: var(--color-prim);
+}
+
+.footer-social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-prim);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-social-icon svg {
+  width: 55%;
+  height: 55%;
+  display: block;
+}
+
+.footer-social-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.footer-social-text {
+  font-family: "avenir", "Avenir", "Avenir Next", Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 900;
+  color: #58585b;
+  line-height: 1;
+}
+
+.footer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  text-decoration: none;
+  direction: rtl;
+  white-space: nowrap;
+}
+
+.footer-phone-label {
+  color: rgb(255 0 109);
+  font-family: "GE Dinar Two", sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.footer-phone-number {
+  color: #58585b;
+  font-family: "avenir", "Avenir", "Avenir Next", Arial, sans-serif;
+  font-size: clamp(16px, 1.7vw, 26px);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  unicode-bidi: isolate;
+}
+
+.footer-phone:hover .footer-phone-number,
+.footer-phone:hover .footer-phone-label {
+  color: var(--color-prim);
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-bar {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 14px 16px 16px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-phone {
+    white-space: normal;
+    justify-content: center;
+  }
+}
+
+/*
+     FILE ARCHIVED ON 07:19:03 Oct 03, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 06:08:17 Sep 15, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.473
+  load_resource: 540.245
+  PetaboxLoader3.resolve: 303.913
+  PetaboxLoader3.datanode: 167.213 (2)
+  loaddict: 122.695
+*/

@@ -1,0 +1,173 @@
+.logo-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-intro.is-flying {
+  background: transparent;
+  pointer-events: none;
+  transition: background 0.8s ease;
+}
+
+body.logo-intro-playing .site-header__logo,
+body.logo-intro-docked .site-header__logo {
+  visibility: hidden;
+}
+
+.logo-intro.is-docked {
+  background: transparent;
+  pointer-events: none;
+}
+
+.logo-intro__lockup {
+  width: min(460px, 88vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-intro__mark {
+  position: relative;
+  width: 248px;
+  height: 212px;
+  margin-bottom: 6px;
+}
+
+.logo-intro__piece {
+  position: absolute;
+}
+
+.logo-intro__piece img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo-intro__piece--circle {
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 248px;
+}
+
+.logo-intro__piece--circle img {
+  transform-origin: center center;
+  animation:
+    logo-intro-circle 0.9s cubic-bezier(0.22, 1, 0.36, 1) both,
+    logo-intro-spin 0.9s cubic-bezier(0.45, 0.05, 0.2, 1) 2.2s forwards;
+}
+
+.logo-intro__piece--lower {
+  left: 22px;
+  top: 62px;
+  z-index: 2;
+  width: 204px;
+}
+
+.logo-intro__piece--lower img {
+  animation: logo-intro-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+}
+
+.logo-intro__piece--upper {
+  left: 59px;
+  top: 116px;
+  z-index: 3;
+  width: 130px;
+}
+
+.logo-intro__piece--upper img {
+  animation: logo-intro-drop 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.68s both;
+}
+
+.logo-intro__ar,
+.logo-intro__en,
+.logo-intro__desc {
+  display: block;
+  height: auto;
+}
+
+.logo-intro__ar {
+  width: min(320px, 78vw);
+  margin-bottom: 10px;
+  animation: logo-intro-text 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1.05s both;
+}
+
+.logo-intro__en {
+  width: min(286px, 70vw);
+  margin-bottom: 12px;
+  animation: logo-intro-text 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1.28s both;
+}
+
+.logo-intro__desc {
+  width: min(340px, 84vw);
+  animation: logo-intro-text 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1.5s both;
+}
+
+@keyframes logo-intro-circle {
+  from {
+    opacity: 0;
+    transform: scale(0.62) rotate(-18deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes logo-intro-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes logo-intro-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-22px) scale(0.88);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes logo-intro-text {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-intro {
+    display: none;
+  }
+}

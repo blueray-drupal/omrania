@@ -1,0 +1,246 @@
+.brands {
+  background: rgb(255, 255, 255);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.brands__reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(36px);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.brands.is-visible .brands__reveal {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.brands__intro {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.brands__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.brands__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.brands__eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: rgb(8, 117, 209);
+}
+
+.brands__eyebrow-label {
+  font-family: Cairo, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: rgb(8, 117, 209);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.brands__title {
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 56px);
+  color: rgb(237, 28, 36);
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.brands__text {
+  font-family: Cairo, sans-serif;
+  font-size: 16px;
+  color: rgb(100, 116, 139);
+  max-width: 520px;
+  margin: 0 auto 56px;
+}
+
+.brands__marquee {
+  overflow: hidden;
+  padding: 16px 0;
+  margin-bottom: 60px;
+}
+
+.brands__track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  animation: brandsScroll 30s linear infinite;
+}
+
+.brands__marquee:hover .brands__track {
+  animation-play-state: paused;
+}
+
+.brands__logo {
+  flex-shrink: 0;
+  width: 164px;
+  height: 72px;
+  background: rgb(245, 249, 253);
+  border: 1px solid rgb(220, 230, 240);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  transition: 0.25s;
+}
+
+.brands__logo:hover {
+  background: rgb(255, 255, 255);
+  border-color: rgb(47, 128, 237);
+  transform: scale(1.04);
+  box-shadow: rgba(47, 128, 237, 0.15) 0 4px 20px;
+}
+
+.brands__logo img {
+  max-width: 120px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.brands__logo span {
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgb(11, 31, 58);
+  text-align: center;
+}
+
+.brands__banner-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.brands__banner {
+  background: rgb(11, 31, 58);
+  border-radius: 16px;
+  padding: 48px 56px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.brands__banner .blueprint-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    linear-gradient(#2f80ed 1px, transparent 1px),
+    linear-gradient(90deg, #2f80ed 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.brands__banner-copy {
+  position: relative;
+}
+
+.brands__banner-copy h3 {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+  margin: 0 0 12px;
+}
+
+.brands__banner-copy p {
+  font-family: Cairo, sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 500px;
+}
+
+.brands__banner-button {
+  position: relative;
+  flex-shrink: 0;
+  font-family: Cairo, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  background: rgb(47, 128, 237);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 9px;
+  padding: 13px 28px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.brands__banner-button:hover {
+  background: rgb(30, 90, 168);
+}
+
+@keyframes brandsScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands__reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  .brands__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .brands {
+    padding: 72px 0;
+  }
+
+  .brands__intro,
+  .brands__banner-wrap {
+    padding: 0 20px;
+  }
+
+  .brands__banner {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+}

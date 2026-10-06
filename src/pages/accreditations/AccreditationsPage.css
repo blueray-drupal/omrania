@@ -1,0 +1,449 @@
+.accreditations-page {
+  padding-top: 92px;
+  background: rgb(255, 255, 255);
+  min-height: 100vh;
+}
+
+.accreditations-page__hero {
+  position: relative;
+  padding: 100px 0 72px;
+  overflow: hidden;
+}
+
+.accreditations-page__hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.accreditations-page__hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(11, 31, 58, 0.96) 0%, rgba(18, 59, 109, 0.816) 100%);
+}
+
+.accreditations-page__hero .blueprint-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(#2f80ed 1px, transparent 1px),
+    linear-gradient(90deg, #2f80ed 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.accreditations-page__hero-copy {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  text-align: center;
+}
+
+.accreditations-page__hero-eyebrow,
+.accreditations-page__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.accreditations-page__hero-eyebrow span:first-child,
+.accreditations-page__hero-eyebrow span:last-child,
+.accreditations-page__eyebrow span:first-child,
+.accreditations-page__eyebrow span:last-child {
+  width: 32px;
+  height: 1px;
+  background: rgb(47, 128, 237);
+}
+
+.accreditations-page__eyebrow span:first-child,
+.accreditations-page__eyebrow span:last-child {
+  background: rgb(8, 117, 209);
+}
+
+.accreditations-page__hero-eyebrow span:nth-child(2) {
+  font-family: Cairo, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: rgb(47, 128, 237);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.accreditations-page__hero-copy h1 {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 56px);
+  color: rgb(255, 255, 255);
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+.accreditations-page__hero-copy h1 span {
+  color: rgb(47, 128, 237);
+}
+
+.accreditations-page__hero-copy p {
+  font-family: Cairo, sans-serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.accreditations-page__body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.accreditations-page__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.accreditations-page__eyebrow {
+  margin-bottom: 16px;
+}
+
+.accreditations-page__eyebrow span:nth-child(2) {
+  font-family: Cairo, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: rgb(8, 117, 209);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.accreditations-page__heading h2 {
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 56px);
+  color: rgb(237, 28, 36);
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.accreditations-page__text {
+  font-family: Cairo, sans-serif;
+  font-size: 16px;
+  color: rgb(100, 116, 139);
+  max-width: 560px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.accreditations-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.accreditations-page__card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 230, 240);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: rgba(11, 31, 58, 0.04) 0 2px 8px;
+  transition: 0.3s;
+}
+
+.accreditations-page__bar {
+  height: 4px;
+  background: var(--accent, #1e5aa8);
+}
+
+.accreditations-page__media {
+  margin: 24px 28px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid rgb(220, 230, 240);
+  background: rgb(245, 249, 253);
+  height: 160px;
+  position: relative;
+}
+
+.accreditations-page__media img,
+.accreditations-page__media-empty {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.accreditations-page__media-empty {
+  background: rgb(245, 249, 253);
+}
+
+.accreditations-page__chip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent, #1e5aa8);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.3px;
+}
+
+.accreditations-page__content {
+  padding: 20px 28px 28px;
+}
+
+.accreditations-page__title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.accreditations-page__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent, #1e5aa8) 8%, transparent);
+  border: 2px solid color-mix(in srgb, var(--accent, #1e5aa8) 19%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent, #1e5aa8);
+}
+
+.accreditations-page__name {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--accent, #1e5aa8);
+  margin-bottom: 2px;
+}
+
+.accreditations-page__subtitle {
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: rgb(11, 31, 58);
+  line-height: 1.3;
+}
+
+.accreditations-page__org {
+  font-family: Cairo, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgb(47, 128, 237);
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.accreditations-page__rule {
+  height: 1px;
+  background: rgb(220, 230, 240);
+  margin-bottom: 14px;
+}
+
+.accreditations-page__content p {
+  font-family: Cairo, sans-serif;
+  font-size: 13.5px;
+  color: rgb(100, 116, 139);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.accreditations-page__standards {
+  margin-bottom: 80px;
+}
+
+.accreditations-page__table {
+  border: 1px solid rgb(220, 230, 240);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: rgba(11, 31, 58, 0.04) 0 2px 12px;
+}
+
+.accreditations-page__table-head {
+  background: rgb(11, 31, 58);
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accreditations-page__table-head span:first-child {
+  width: 4px;
+  height: 18px;
+  background: rgb(226, 0, 26);
+  border-radius: 2px;
+}
+
+.accreditations-page__table-head span:last-child {
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.3px;
+}
+
+.accreditations-page__row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border-bottom: 1px solid rgb(220, 230, 240);
+  background: rgb(255, 255, 255);
+}
+
+.accreditations-page__row:nth-child(odd) {
+  background: rgb(245, 249, 253);
+}
+
+.accreditations-page__row:last-child {
+  border-bottom: none;
+}
+
+.accreditations-page__row div {
+  padding: 16px 28px;
+  font-family: Cairo, sans-serif;
+  font-size: 14px;
+  color: rgb(100, 116, 139);
+}
+
+.accreditations-page__row div:first-child {
+  font-weight: 700;
+  color: rgb(11, 31, 58);
+  border-right: 1px solid rgb(220, 230, 240);
+}
+
+.accreditations-page__commitment {
+  background: rgb(245, 249, 253);
+  border-radius: 20px;
+  padding: 56px 64px;
+  border: 1px solid rgb(220, 230, 240);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.accreditations-page__commitment h3 {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: rgb(11, 31, 58);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.accreditations-page__commitment h3 span {
+  color: rgb(226, 0, 26);
+}
+
+.accreditations-page__commitment p {
+  font-family: Cairo, sans-serif;
+  font-size: 15px;
+  color: rgb(100, 116, 139);
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+
+.accreditations-page__commitment p:last-child {
+  margin-bottom: 0;
+}
+
+.accreditations-page__checks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accreditations-page__check {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.accreditations-page__check span:first-child {
+  margin-top: 4px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(47, 128, 237, 0.082);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accreditations-page__check span:last-child {
+  font-family: Cairo, sans-serif;
+  font-size: 14px;
+  color: rgb(11, 31, 58);
+  line-height: 1.6;
+}
+
+.accreditations-page__reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(36px);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.accreditations-page__intro.is-visible .accreditations-page__reveal {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .accreditations-page__commitment,
+  .accreditations-page__row {
+    grid-template-columns: 1fr;
+  }
+
+  .accreditations-page__row div:first-child {
+    border-right: none;
+    border-bottom: 1px solid rgb(220, 230, 240);
+    padding-bottom: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .accreditations-page__hero-copy,
+  .accreditations-page__body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .accreditations-page__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accreditations-page__commitment {
+    padding: 32px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accreditations-page__reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+}

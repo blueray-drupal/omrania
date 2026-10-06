@@ -1,0 +1,580 @@
+/*
+ * Global accessibility + theme layer.
+ * Applies site-wide preferences set by sitePreferences.js
+ */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+.app-wrapper {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* ═══ UNIVERSAL THEME — every page section uses CSS variables ═══ */
+
+.inner-page-wrapper,
+.inner-page-container,
+.main-content,
+.full-content,
+.page-content-grid {
+  color: var(--text-color);
+}
+
+.main-content div,
+.main-content p,
+/* .main-content span:not(.tender-number-badge), */
+.main-content li,
+.main-content td,
+.main-content label,
+.main-content .venue-description,
+.main-content .cargo-paragraph,
+.main-content .service-card-description,
+.main-content .contact-info-box,
+.main-content .contact-info-box p,
+.main-content .contact-info-box div,
+.main-content .basic-page-body,
+.main-content .news-details-body,
+.main-content .faq-answer,
+.full-content div,
+.full-content p,
+.full-content span:not(.tender-number-badge) {
+  color: var(--text-color);
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6,
+.main-content strong,
+.main-content b,
+.full-content h1,
+.full-content h2,
+.full-content h3,
+.full-content h4 {
+  color: var(--heading-color);
+}
+
+.main-content a,
+.full-content a {
+  color: var(--link-color);
+}
+
+.main-content a:hover,
+.full-content a:hover {
+  color: var(--link-hover-color);
+}
+
+.main-content .section-title,
+.main-content .contact-title,
+.main-content .phone-number,
+.main-content .platform-title,
+.main-content .service-card-header h3,
+.main-content .link-job,
+.main-content .back-link {
+  color: var(--primary-color);
+}
+
+.main-content .btn-link,
+.main-content .btn-link:hover,
+.main-content .table-download-btn,
+.main-content .sidebar-header,
+.main-content .sidebar-item.active a {
+  color: #ffffff;
+}
+
+.main-platform-card {
+  background-color: var(--vision-box-bg);
+}
+
+.contact-info-box,
+.service-card-header,
+.vision-box,
+.mission-box,
+.complaint-card,
+.custom-card,
+.conference-card,
+.album-card,
+.gallery-image-card,
+.foi-card,
+.job-card,
+.faq-item,
+.app-btn,
+.venue-image-wrapper,
+.welcome-image,
+.card-image-wrapper,
+.footer-main,
+.footer-partner {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.main-content,
+.full-content,
+.sidebar-container,
+.apps-download-card {
+  background-color: var(--content-bg);
+}
+
+/* Home page sections */
+.services-home,
+.latest-news-section,
+.about-home-section,
+.explore-section,
+.facts-section,
+.news-card,
+.service-card,
+.about-home-wrapper {
+  color: var(--text-color);
+}
+
+.news-card,
+.service-card,
+.explore-card {
+  background-color: var(--content-bg);
+  border-color: var(--border-color);
+}
+
+.news-card-title,
+.service-card-title,
+.about-home-title,
+.news-section-title,
+.services-title {
+  color: var(--heading-color);
+}
+
+.news-card-summary,
+.service-card-body,
+.about-home-body {
+  color: var(--text-color);
+}
+
+/* ─── Content surfaces ─────────────────────────────────────────────────── */
+
+[data-theme="dark"] .inner-page-wrapper,
+[data-theme="dark"] .page-content-wrapper,
+[data-theme="dark"] .page-content-grid,
+[data-theme="dark"] .page-layout-content,
+[data-theme="dark"] .basic-page-content,
+[data-theme="dark"] .contact-page,
+[data-theme="dark"] .complaints-page,
+[data-theme="dark"] .faq-page,
+[data-theme="dark"] .sitemap-page,
+[data-theme="dark"] .useful-links-page,
+[data-theme="dark"] .freedom-of-information-page {
+  background-color: var(--surface-color) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .sidebar-container {
+  background-color: var(--content-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .main-content .welcome-text,
+[data-theme="dark"] .main-content .about-body,
+[data-theme="dark"] .main-content .welcome-text p,
+[data-theme="dark"] .main-content .about-body p,
+[data-theme="dark"] .main-content .welcome-text li,
+[data-theme="dark"] .main-content .about-body li,
+[data-theme="dark"] .main-content .welcome-text span,
+[data-theme="dark"] .main-content .about-body span,
+[data-theme="dark"] .main-content .welcome-text div,
+[data-theme="dark"] .main-content .about-body div {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .main-content .welcome-text strong,
+[data-theme="dark"] .main-content .about-body strong,
+[data-theme="dark"] .main-content .welcome-text b,
+[data-theme="dark"] .main-content .about-body b {
+  color: var(--heading-color) !important;
+}
+
+[data-theme="dark"] .main-content .welcome-text em strong {
+  color: var(--link-color) !important;
+}
+
+[data-theme="dark"] .main-content .welcome-name,
+[data-theme="dark"] .main-content .welcome-position,
+[data-theme="dark"] .main-content .welcome-company {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .main-content .welcome-position {
+  color: var(--link-color) !important;
+}
+
+[data-theme="dark"] .main-content .section-title {
+  color: var(--primary-color) !important;
+  border-bottom-color: var(--secondary-color) !important;
+}
+
+/* ─── Inner page cards & CMS content (site-wide catch-all) ─────────────── */
+
+[data-theme="dark"] .main-content .complaint-card,
+[data-theme="dark"] .main-content .custom-card,
+[data-theme="dark"] .main-content .conference-card,
+[data-theme="dark"] .main-content .contact-card,
+[data-theme="dark"] .main-content .info-card,
+[data-theme="dark"] .main-content .legislation-item,
+[data-theme="dark"] .main-content .gallery-item,
+[data-theme="dark"] .main-content .faq-item,
+[data-theme="dark"] .main-content .useful-link-item,
+[data-theme="dark"] .main-content .sitemap-block,
+[data-theme="dark"] .main-content .foi-section,
+[data-theme="dark"] .main-content .venue-booking-content,
+[data-theme="dark"] .full-content .complaint-card {
+  background-color: var(--content-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .main-content .main-platform-card {
+  background-color: var(--vision-box-bg) !important;
+  border-right-color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .main-content .platform-title,
+[data-theme="dark"] .main-content .apps-title,
+[data-theme="dark"] .main-content .app-name {
+  color: var(--heading-color) !important;
+}
+
+[data-theme="dark"] .main-content .platform-description,
+[data-theme="dark"] .main-content .platform-description p,
+[data-theme="dark"] .main-content .app-store,
+[data-theme="dark"] .main-content .app-store p {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .main-content .app-btn {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .main-content div[class*="description"],
+[data-theme="dark"] .main-content div[class*="content"]:not(.platform-logo-wrapper),
+[data-theme="dark"] .full-content div[class*="description"] {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .main-content div[class*="description"] p,
+[data-theme="dark"] .main-content div[class*="description"] li,
+[data-theme="dark"] .main-content div[class*="description"] span,
+[data-theme="dark"] .full-content div[class*="description"] p {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .main-page-title,
+[data-theme="dark"] .page-title,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .about-title,
+[data-theme="dark"] .news-section-title,
+[data-theme="dark"] .services-title,
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .news-card-title,
+[data-theme="dark"] .service-card-title,
+[data-theme="dark"] .job-title,
+[data-theme="dark"] .info-title,
+[data-theme="dark"] h1:not(.slider-title):not(.fact-title),
+[data-theme="dark"] h2:not(.slider-title):not(.fact-title),
+[data-theme="dark"] h3:not(.slider-title):not(.fact-title),
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--heading-color) !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] span:not(.ticker-item):not(.fact-number):not(.card-date):not(.tender-number-badge),
+[data-theme="dark"] label,
+[data-theme="dark"] .card-description,
+[data-theme="dark"] .news-card-summary,
+[data-theme="dark"] .service-card-body,
+[data-theme="dark"] .about-home-body,
+[data-theme="dark"] .venue-description,
+[data-theme="dark"] .breadcrumb span {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .breadcrumb a,
+[data-theme="dark"] .news-card-link,
+[data-theme="dark"] .about-home-btn,
+[data-theme="dark"] .card-link,
+[data-theme="dark"] .sidebar-item a:hover,
+[data-theme="dark"] a:not(.nav-link):not(.footer-top-menu-link):not(.contact-item):not(.lang-btn):not(.news-ticker-bar a) {
+  color: var(--link-color);
+}
+
+[data-theme="dark"] .breadcrumb a:hover,
+[data-theme="dark"] .news-card-link:hover,
+[data-theme="dark"] .card-link:hover {
+  color: var(--link-hover-color);
+}
+
+/* ─── Cards, sidebar, panels ─────────────────────────────────────────── */
+
+[data-theme="dark"] .custom-card,
+[data-theme="dark"] .conference-card,
+[data-theme="dark"] .news-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .sidebar-container,
+[data-theme="dark"] .sidebar-content,
+[data-theme="dark"] .page-content-box,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .job-card,
+[data-theme="dark"] .gallery-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .complaints-form-wrapper,
+[data-theme="dark"] .drupal-webform,
+[data-theme="dark"] .foi-form-section,
+[data-theme="dark"] .about-content-box,
+[data-theme="dark"] .legislation-card,
+[data-theme="dark"] .useful-link-card,
+[data-theme="dark"] .sitemap-section,
+[data-theme="dark"] .faq-item,
+[data-theme="dark"] .explore-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+  box-shadow: 0 2px 8px var(--shadow-color) !important;
+}
+
+[data-theme="dark"] .card-image-wrapper,
+[data-theme="dark"] .news-card-image,
+[data-theme="dark"] .service-icon {
+  background-color: var(--surface-muted) !important;
+}
+
+[data-theme="dark"] .card-date,
+[data-theme="dark"] .news-card-date,
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .secondary-nav li:not(a) {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .sidebar-item {
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .sidebar-item a {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .sidebar-item.active a,
+[data-theme="dark"] .sidebar-item a.active {
+  background-color: var(--surface-muted) !important;
+  color: var(--link-color) !important;
+}
+
+[data-theme="dark"] .dropdown-menu a:hover,
+[data-theme="dark"] .sidebar-item a:hover {
+  background-color: var(--surface-muted) !important;
+}
+
+/* ─── Forms & inputs ───────────────────────────────────────────────────── */
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select,
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .webform-input,
+[data-theme="dark"] .drupal-webform input,
+[data-theme="dark"] .drupal-webform textarea,
+[data-theme="dark"] .drupal-webform select {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--input-text) !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--muted-text) !important;
+}
+
+[data-theme="dark"] button:not(.lang-btn):not(.tool-btn):not(.nav-link):not(.slider-btn):not(.about-home-btn):not(.ticker-badge) {
+  color: inherit;
+}
+
+/* ─── Home sections ────────────────────────────────────────────────────── */
+
+[data-theme="dark"] .latest-news-section,
+[data-theme="dark"] .services-home,
+[data-theme="dark"] .about-home-section,
+[data-theme="dark"] .explore-section {
+  background-color: var(--bg-color) !important;
+}
+
+[data-theme="dark"] .news-loading {
+  color: var(--text-muted);
+}
+
+/* ─── Page layout chrome ───────────────────────────────────────────────── */
+
+[data-theme="dark"] .inner-page-wrapper {
+  background: var(--surface-color) !important;
+}
+
+[data-theme="dark"] .page-header-wrapper {
+  border-bottom-color: var(--gold-accent) !important;
+}
+
+/* ─── Tables & lists ───────────────────────────────────────────────────── */
+
+[data-theme="dark"] table,
+[data-theme="dark"] th,
+[data-theme="dark"] td,
+[data-theme="dark"] tr {
+  border-color: var(--border-color) !important;
+  color: var(--text-color);
+}
+
+[data-theme="dark"] th {
+  background-color: var(--surface-muted) !important;
+}
+
+[data-theme="dark"] .about-table thead tr,
+[data-theme="dark"] .about-table thead th {
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] tr:nth-child(even) {
+  background-color: var(--surface-muted) !important;
+}
+
+/* ─── Hide images (site-wide) ──────────────────────────────────────────── */
+
+html[data-hide-images="true"] img:not(.keep-visible),
+html[data-hide-images="true"] picture,
+html[data-hide-images="true"] video,
+html[data-hide-images="true"] iframe,
+html[data-hide-images="true"] svg image,
+body.site-hide-images img:not(.keep-visible),
+body.site-hide-images picture,
+body.site-hide-images video,
+body.site-hide-images iframe {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+html[data-hide-images="true"] img:not(.keep-visible),
+html[data-hide-images="true"] video,
+body.site-hide-images img:not(.keep-visible),
+body.site-hide-images video {
+  max-height: 0 !important;
+  max-width: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+html[data-hide-images="true"] [style*="background-image"],
+html[data-hide-images="true"] .card-image-wrapper,
+html[data-hide-images="true"] .news-card-image,
+html[data-hide-images="true"] .slide-image,
+html[data-hide-images="true"] .hero-image,
+html[data-hide-images="true"] .gallery-image,
+html[data-hide-images="true"] .venue-image-wrapper,
+html[data-hide-images="true"] .about-image,
+body.site-hide-images [style*="background-image"],
+body.site-hide-images .card-image-wrapper,
+body.site-hide-images .news-card-image,
+body.site-hide-images .slide-image,
+body.site-hide-images .hero-image,
+body.site-hide-images .gallery-image,
+body.site-hide-images .venue-image-wrapper,
+body.site-hide-images .about-image {
+  background-image: none !important;
+  background-color: var(--surface-muted, #f3f4f6) !important;
+  min-height: 48px;
+}
+
+html[data-hide-images="true"] .card-image-wrapper img,
+html[data-hide-images="true"] .news-card-image img,
+body.site-hide-images .card-image-wrapper img,
+body.site-hide-images .news-card-image img {
+  display: none !important;
+}
+
+/* ─── Header & footer ──────────────────────────────────────────────────── */
+
+[data-theme="dark"] .top-bar,
+[data-theme="dark"] .main-nav {
+  background-color: var(--header-bar-bg) !important;
+}
+
+[data-theme="dark"] .middle-bar {
+  background-color: var(--bg-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .secondary-nav a,
+[data-theme="dark"] .brand-text h2,
+[data-theme="dark"] .brand-text span {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .footer-top {
+  background: var(--footer-top-bg) !important;
+}
+
+[data-theme="dark"] .footer-main,
+[data-theme="dark"] .footer-middle,
+[data-theme="dark"] .footer-bottom,
+[data-theme="dark"] .footer-content,
+[data-theme="dark"] .footer-links-section,
+[data-theme="dark"] .footer-important-links,
+[data-theme="dark"] .footer-contact {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .footer-copyright .footer-policy-link {
+  color: #dddddd !important;
+}
+
+[data-theme="dark"] .footer-copyright .footer-policy-link:hover {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .footer-middle a,
+[data-theme="dark"] .footer-bottom a:not(.footer-policy-link),
+[data-theme="dark"] .footer-links-section a,
+[data-theme="dark"] .footer-contact-item,
+[data-theme="dark"] .footer-description,
+[data-theme="dark"] .footer-contact p,
+[data-theme="dark"] .footer-more-link,
+[data-theme="dark"] .footer-important-links a {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .news-details,
+[data-theme="dark"] .news-details-body,
+[data-theme="dark"] .venue-booking-content,
+[data-theme="dark"] .about-page-content,
+[data-theme="dark"] .info-center-content,
+[data-theme="dark"] .legislations-content {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+}
+
+/* ─── Font scaling helpers ─────────────────────────────────────────────── */
+
+html[data-font-scale="-3"],
+html[data-font-scale="-2"],
+html[data-font-scale="-1"],
+html[data-font-scale="1"],
+html[data-font-scale="2"],
+html[data-font-scale="3"] {
+  scroll-behavior: smooth;
+}

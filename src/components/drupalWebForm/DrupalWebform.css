@@ -1,0 +1,568 @@
+/*
+ * DrupalWebform.css
+ *
+ * Minimal, composable styles for the generic DrupalWebform component.
+ * Uses a "dwf-" prefix (Drupal Web Form) to avoid collisions.
+ *
+ * All colours and radii are CSS variables so you can override them
+ * in your project's root styles without touching this file:
+ *
+ *   :root {
+ *     --dwf-accent:       #2f6b3f;
+ *     --dwf-accent-hover: #245432;
+ *     --dwf-radius:       10px;
+ *     --dwf-font:         system-ui, sans-serif;
+ *   }
+ */
+
+/* ─── Variables (override these in your project) ─────────────────────────── */
+:root {
+  --dwf-accent:         var(--primary-color);
+  --dwf-accent-hover:   var(--accent-color);
+  --dwf-error:          #dc2626;
+  --dwf-success:        #16a34a;
+  --dwf-border:         var(--border-color);
+  --dwf-border-focus:   var(--dwf-accent);
+  --dwf-border-error:   var(--dwf-error);
+  --dwf-bg:             var(--content-bg);
+  --dwf-bg-input:       var(--input-bg);
+  --dwf-bg-file:        var(--card-bg);
+  --dwf-text:           var(--text-color);
+  --dwf-text-label:     var(--heading-color);
+  --dwf-text-muted:     var(--text-muted);
+  --dwf-text-placeholder: var(--text-muted);
+  --dwf-radius:         8px;
+  --dwf-radius-btn:     999px;
+  --dwf-font:           system-ui, -apple-system, sans-serif;
+  --dwf-font-size:      14px;
+  --dwf-btn-bg:         var(--dwf-accent);
+  --dwf-btn-color:      #ffffff;
+  --dwf-btn-bg-hover:   var(--dwf-accent-hover);
+  --dwf-gap:            16px;
+}
+
+/* ─── Shell ──────────────────────────────────────────────────────────────── */
+.dwf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwf-gap);
+  font-family: var(--dwf-font);
+  font-size: var(--dwf-font-size);
+  color: var(--dwf-text);
+}
+
+.dwf--loading,
+.dwf--empty,
+.dwf--error,
+.dwf--success {
+  padding: 24px;
+  text-align: center;
+}
+
+.dwf--loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--dwf-text-muted);
+}
+
+/* ─── Spinner ────────────────────────────────────────────────────────────── */
+.dwf-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--dwf-border);
+  border-top-color: var(--dwf-accent);
+  border-radius: 50%;
+  animation: dwf-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes dwf-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Messages ───────────────────────────────────────────────────────────── */
+.dwf-message {
+  margin: 0;
+  font-size: var(--dwf-font-size);
+  line-height: 1.5;
+}
+
+.dwf-message--error {
+  color: var(--dwf-error);
+  background: color-mix(in srgb, var(--dwf-error) 8%, transparent);
+  padding: 12px 16px;
+  border-radius: var(--dwf-radius);
+}
+
+.dwf-message--success-title {
+  color: var(--dwf-success);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.dwf-message--success-text {
+  color: var(--dwf-text-muted);
+}
+
+/* ─── Fields container ───────────────────────────────────────────────────── */
+.dwf-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwf-gap);
+}
+
+/* ─── Sections (optional grouped layout) ─────────────────────────────────── */
+.dwf-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwf-gap);
+}
+
+.dwf-section-title {
+  margin: 0;
+  font-size: var(--dwf-font-size);
+  font-weight: 700;
+  color: var(--dwf-text-label);
+}
+
+.dwf-section-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dwf-gap);
+}
+
+/* Two-column row */
+.dwf-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--dwf-gap);
+}
+
+@media (max-width: 768px) {
+  .dwf-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Single field ───────────────────────────────────────────────────────── */
+.dwf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ─── Label ──────────────────────────────────────────────────────────────── */
+.dwf-label {
+  font-size: var(--dwf-font-size);
+  font-weight: 600;
+  color: var(--dwf-text-label);
+  cursor: pointer;
+  user-select: none;
+}
+
+.dwf-required {
+  color: var(--dwf-error);
+}
+
+/* ─── Description ────────────────────────────────────────────────────────── */
+.dwf-description {
+  font-size: 12px;
+  color: var(--dwf-text-muted);
+  line-height: 1.4;
+}
+
+/* ─── Shared input base ──────────────────────────────────────────────────── */
+.dwf-input,
+.dwf-textarea,
+.dwf-select {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--dwf-bg-input);
+  border: 1px solid var(--dwf-border);
+  border-radius: var(--dwf-radius);
+  padding: 10px 14px;
+  font-size: var(--dwf-font-size);
+  font-family: var(--dwf-font);
+  color: var(--dwf-text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  line-height: 1.5;
+}
+
+.dwf-input::placeholder,
+.dwf-textarea::placeholder {
+  color: var(--dwf-text-placeholder);
+}
+
+.dwf-input:focus,
+.dwf-textarea:focus,
+.dwf-select:focus {
+  border-color: var(--dwf-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dwf-accent) 15%, transparent);
+}
+
+.dwf-input--error,
+.dwf-textarea--error,
+.dwf-select--error {
+  border-color: var(--dwf-border-error);
+}
+
+.dwf-input--error:focus,
+.dwf-textarea--error:focus,
+.dwf-select--error:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dwf-error) 15%, transparent);
+}
+
+/* ─── Textarea ───────────────────────────────────────────────────────────── */
+.dwf-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ─── Select ─────────────────────────────────────────────────────────────── */
+.dwf-select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+/* ─── Fieldset (radios / checkboxes) ─────────────────────────────────────── */
+.dwf-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dwf-legend {
+  font-size: var(--dwf-font-size);
+  font-weight: 600;
+  color: var(--dwf-text-label);
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+/* ─── Radios ─────────────────────────────────────────────────────────────── */
+.dwf-radios {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dwf-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: var(--dwf-font-size);
+  color: var(--dwf-text-label);
+}
+
+.dwf-radio {
+  accent-color: var(--dwf-accent);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* ─── Checkboxes ─────────────────────────────────────────────────────────── */
+.dwf-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dwf-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--dwf-border);
+  border-radius: var(--dwf-radius);
+  cursor: pointer;
+  font-size: var(--dwf-font-size);
+  color: var(--dwf-text-label);
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+  user-select: none;
+}
+
+.dwf-checkbox-label:hover {
+  background: color-mix(in srgb, var(--dwf-accent) 5%, transparent);
+  border-color: var(--dwf-accent);
+}
+
+.dwf-checkbox {
+  accent-color: var(--dwf-accent);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* ─── File upload ────────────────────────────────────────────────────────── */
+.dwf-file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 24px 16px;
+  background: var(--dwf-bg-file);
+  border: 1.5px dashed var(--dwf-border);
+  border-radius: var(--dwf-radius);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.dwf-file-label:hover {
+  border-color: var(--dwf-accent);
+  background: color-mix(in srgb, var(--dwf-accent) 4%, var(--dwf-bg-file));
+}
+
+.dwf-file-input {
+  /* Hidden — the label is the clickable target */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dwf-file-text {
+  font-size: var(--dwf-font-size);
+  color: var(--dwf-text-label);
+}
+
+/* ─── Error ──────────────────────────────────────────────────────────────── */
+.dwf-error {
+  display: block;
+  font-size: 12px;
+  color: var(--dwf-error);
+  line-height: 1.4;
+}
+
+/* ─── Actions ────────────────────────────────────────────────────────────── */
+.dwf-actions {
+  margin-top: 4px;
+}
+
+/* ─── Submit button ──────────────────────────────────────────────────────── */
+.dwf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 28px;
+  background: var(--dwf-btn-bg);
+  color: var(--dwf-btn-color);
+  border: none;
+  border-radius: var(--dwf-radius-btn);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--dwf-font);
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+  user-select: none;
+}
+
+.dwf-btn:hover:not(:disabled) {
+  background: var(--dwf-btn-bg-hover);
+}
+
+.dwf-btn:focus-visible {
+  outline: 2px solid var(--dwf-accent);
+  outline-offset: 3px;
+}
+
+.dwf-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dwf-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Reusable branded card theme used across contact/join style pages */
+.dwf-theme-brand-card {
+  --dwf-accent: #897d56;
+  --dwf-accent-hover: #756a45;
+  --dwf-border-focus: #897d56;
+  --dwf-border: #e5e7eb;
+  --dwf-bg-input: #f9fafb;
+  --dwf-text: #564636;
+  --dwf-text-label: #374151;
+  --dwf-text-placeholder: #9ca3af;
+  --dwf-radius: 12px;
+  --dwf-radius-btn: 12px;
+  --dwf-font-size: 14px;
+  --dwf-gap: 24px;
+  --dwf-btn-bg: #564636;
+  --dwf-btn-bg-hover: #3e3226;
+}
+
+.dwf-theme-brand-card .dwf-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.dwf-theme-brand-card .dwf-field {
+  gap: 8px;
+}
+
+.dwf-theme-brand-card .dwf-input,
+.dwf-theme-brand-card .dwf-textarea,
+.dwf-theme-brand-card .dwf-select {
+  min-height: 48px;
+  border-color: #e5e7eb;
+  background: var(--dwf-bg-input);
+  padding: 12px 14px;
+}
+
+.dwf-theme-brand-card .dwf-input:focus,
+.dwf-theme-brand-card .dwf-textarea:focus,
+.dwf-theme-brand-card .dwf-select:focus {
+  box-shadow: 0 0 0 3px rgba(137, 125, 86, 0.16);
+}
+
+.dwf-theme-brand-card .dwf-textarea {
+  min-height: 160px;
+  resize: none;
+}
+
+.dwf-theme-brand-card #phone,
+.dwf-theme-brand-card #mobile,
+.dwf-theme-brand-card #telephone,
+.dwf-theme-brand-card #email,
+.dwf-theme-brand-card #mail {
+  direction: ltr;
+  text-align: left;
+}
+
+.dwf-theme-brand-card .dwf-actions {
+  margin-top: 4px;
+}
+
+.dwf-theme-brand-card .dwf-btn {
+  width: 100%;
+  min-height: 56px;
+  border-radius: 12px;
+  background: #564636;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 10px 24px -16px rgba(86, 70, 54, 0.8);
+}
+
+.dwf-theme-brand-card .dwf-btn:hover:not(:disabled) {
+  background: #3e3226;
+}
+
+/* Contact page form — matches reference card layout */
+.dwf-theme-contact {
+  --dwf-accent: #5d5875;
+  --dwf-accent-hover: #2a5c8a;
+  --dwf-border-focus: #5d5875;
+  --dwf-border: #a4a4a4;
+  --dwf-bg-input: #ffffff;
+  --dwf-text: #333333;
+  --dwf-text-label: #333333;
+  --dwf-text-placeholder: #9ca3af;
+  --dwf-radius: 5px;
+  --dwf-radius-btn: 10px;
+  --dwf-font: "Janna LT", Amiri, "Noto Sans Arabic", "Arabic UI Text", "Geeza Pro", Arial, sans-serif;
+  --dwf-font-size: 14px;
+  --dwf-gap: 24px;
+  --dwf-btn-bg: rgb(93, 88, 117);
+  --dwf-btn-bg-hover: #2a5c8a;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dwf-theme-contact .dwf-fields {
+  flex: 1;
+}
+
+.dwf-theme-contact .dwf-label {
+  display: block;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  text-align: right;
+}
+
+.dwf-theme-contact .dwf-field {
+  gap: 8px;
+}
+
+.dwf-theme-contact .dwf-input,
+.dwf-theme-contact .dwf-select {
+  height: 49px;
+  min-height: 49px;
+  padding: 8px 12px;
+  border-color: #a4a4a4;
+  border-radius: 5px;
+  background: var(--content-bg);
+  text-align: right;
+}
+
+.dwf-theme-contact .dwf-textarea {
+  min-height: 153px;
+  padding: 12px;
+  border-color: #a4a4a4;
+  border-radius: 5px;
+  background: var(--content-bg);
+  text-align: right;
+  resize: none;
+}
+
+.dwf-theme-contact .dwf-input:focus,
+.dwf-theme-contact .dwf-textarea:focus,
+.dwf-theme-contact .dwf-select:focus {
+  border-color: #5d5875;
+  box-shadow: 0 0 0 3px rgba(93, 88, 117, 0.15);
+}
+
+.dwf-theme-contact .dwf-actions {
+  margin-top: auto;
+}
+
+.dwf-theme-contact .dwf-btn {
+  height: 48px;
+  min-height: 48px;
+  width: 100%;
+  padding: 8px 32px;
+  border-radius: 10px;
+  background: rgb(93, 88, 117);
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.dwf-theme-contact .dwf-btn:hover:not(:disabled) {
+  background: #2a5c8a;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .dwf-theme-contact .dwf-btn {
+    width: auto;
+  }
+}

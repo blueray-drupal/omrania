@@ -1,0 +1,396 @@
+.brands-page {
+  padding-top: 92px;
+  background: rgb(255, 255, 255);
+  min-height: 100vh;
+}
+
+.brands-page__hero {
+  position: relative;
+  padding: 100px 0 72px;
+  overflow: hidden;
+}
+
+.brands-page__hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brands-page__hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(11, 31, 58, 0.96) 0%, rgba(18, 59, 109, 0.816) 100%);
+}
+
+.brands-page__hero .blueprint-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(#2f80ed 1px, transparent 1px),
+    linear-gradient(90deg, #2f80ed 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.brands-page__hero-copy {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  text-align: center;
+}
+
+.brands-page__hero-eyebrow,
+.brands-page__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.brands-page__hero-eyebrow span:first-child,
+.brands-page__hero-eyebrow span:last-child,
+.brands-page__eyebrow span:first-child,
+.brands-page__eyebrow span:last-child {
+  width: 32px;
+  height: 1px;
+  background: rgb(47, 128, 237);
+}
+
+.brands-page__eyebrow span:first-child,
+.brands-page__eyebrow span:last-child {
+  background: rgb(8, 117, 209);
+}
+
+.brands-page__hero-eyebrow span:nth-child(2) {
+  font-family: Cairo, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: rgb(47, 128, 237);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.brands-page__hero-copy h1 {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 56px);
+  color: rgb(255, 255, 255);
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+.brands-page__hero-copy h1 span {
+  color: rgb(47, 128, 237);
+}
+
+.brands-page__hero-copy p {
+  font-family: Cairo, sans-serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.brands-page__marquee {
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(220, 230, 240);
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.brands-page__track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  animation: brandsPageScroll 30s linear infinite;
+}
+
+.brands-page__marquee:hover .brands-page__track {
+  animation-play-state: paused;
+}
+
+.brands-page__logo {
+  flex-shrink: 0;
+  width: 164px;
+  height: 68px;
+  background: rgb(245, 249, 253);
+  border: 1px solid rgb(220, 230, 240);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  transition: 0.25s;
+}
+
+.brands-page__logo:hover {
+  background: rgb(255, 255, 255);
+  border-color: rgb(47, 128, 237);
+  transform: scale(1.04);
+  box-shadow: rgba(47, 128, 237, 0.15) 0 4px 20px;
+}
+
+.brands-page__logo img {
+  max-width: 120px;
+  max-height: 36px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.brands-page__logo span {
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: rgb(11, 31, 58);
+  text-align: center;
+}
+
+.brands-page__body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.brands-page__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.brands-page__eyebrow {
+  margin-bottom: 16px;
+}
+
+.brands-page__eyebrow span:nth-child(2) {
+  font-family: Cairo, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: rgb(8, 117, 209);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.brands-page__heading h2 {
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 56px);
+  color: rgb(237, 28, 36);
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.brands-page__text {
+  font-family: Cairo, sans-serif;
+  font-size: 16px;
+  color: rgb(100, 116, 139);
+  max-width: 560px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.brands-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.brands-page__card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(220, 230, 240);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: rgba(11, 31, 58, 0.04) 0 2px 8px;
+  transition: 0.3s;
+}
+
+.brands-page__bar {
+  height: 4px;
+  background: var(--accent, #003d7a);
+}
+
+.brands-page__card-body {
+  padding: 28px 28px 24px;
+}
+
+.brands-page__card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.brands-page__name {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: rgb(11, 31, 58);
+  margin-bottom: 4px;
+}
+
+.brands-page__category {
+  font-family: Cairo, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(47, 128, 237);
+  letter-spacing: 0.5px;
+}
+
+.brands-page__place {
+  flex-shrink: 0;
+  font-family: Cairo, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgb(100, 116, 139);
+  background: rgb(245, 249, 253);
+  border: 1px solid rgb(220, 230, 240);
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.brands-page__rule {
+  height: 1px;
+  background: rgb(220, 230, 240);
+  margin-bottom: 16px;
+}
+
+.brands-page__card p {
+  font-family: Cairo, sans-serif;
+  font-size: 14px;
+  color: rgb(100, 116, 139);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.brands-page__banner {
+  margin-top: 80px;
+  background: rgb(11, 31, 58);
+  border-radius: 20px;
+  padding: 56px 64px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.brands-page__banner .blueprint-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    linear-gradient(#2f80ed 1px, transparent 1px),
+    linear-gradient(90deg, #2f80ed 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.brands-page__banner-copy,
+.brands-page__banner a {
+  position: relative;
+}
+
+.brands-page__banner h3 {
+  font-family: Cairo, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+  margin: 0 0 12px;
+}
+
+.brands-page__banner p {
+  font-family: Cairo, sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 520px;
+}
+
+.brands-page__banner a {
+  flex-shrink: 0;
+  font-family: Cairo, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  background: rgb(226, 0, 26);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 14px 32px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.brands-page__banner a:hover {
+  background: rgb(180, 0, 20);
+}
+
+.brands-page__reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(36px);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.brands-page__intro.is-visible .brands-page__reveal {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+@keyframes brandsPageScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .brands-page__banner {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brands-page__hero-copy,
+  .brands-page__body {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .brands-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands-page__reveal,
+  .brands-page__track {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}

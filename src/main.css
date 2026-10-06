@@ -1,0 +1,117 @@
+@import "./styles/siteAccessibility.css";
+@import "./components/skeleton/skeleton.css";
+
+/* Color Palette Extracted from Site Design */
+
+:root {
+  --font-scale: 1;
+
+  /* Light Theme Brand Colors */
+  --primary-color: #0d748d;
+  /* Dark Petrol Blue (Header / News Ticker / Accents) */
+  --secondary-color: #c9933b;
+  --brwon-color: #373238;
+  /* Gold / Mustard (English Button & Action Buttons) */
+  --accent-color: #0b5e72;
+  /* Darker Petrol Blue for hover states */
+
+  /* Light Theme Backgrounds & Texts */
+  --bg-color: #ffffff;
+  /* Main Page Background */
+  --card-bg: #f8f9fa;
+  /* Section / Card Background */
+  --text-color: #2b2b2b;
+  --black-color: #000;
+  /* Main Text Color */
+  --text-muted: #666666;
+  /* Secondary Subtitles & Links */
+  --border-color: #e2e8f0;
+  /* Subtle Separator Lines */
+
+  /* Hero / Banner Overlays */
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+
+  /* Page layout surfaces */
+  --surface-color: #f4f4f4;
+  --content-bg: #ffffff;
+  --heading-color: #181818;
+  --link-color: #0d748d;
+  --link-hover-color: #0a4a59;
+  --input-bg: #ffffff;
+  --input-border: #e2e8f0;
+  --input-text: #2b2b2b;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --header-bar-bg: #0d748d;
+  --footer-top-bg: #11758d;
+  --gold-accent: #c9933b;
+  --muted-text-light: #888888;
+  --divider-color: #e5e7eb;
+  --sidebar-hover-bg: #f9f9f9;
+  --vision-box-bg: #f0f7f9;
+  --mission-box-bg: #faf6ef;
+}
+
+[data-theme="dark"] {
+  --brwon-color: #fff;
+
+  /* Dark Theme Adjustments while preserving brand identity */
+  --primary-color: #1289a7;
+  /* Brighter Petrol Blue for Dark Contrast */
+  --secondary-color: #d4a347;
+  /* Brighter Gold */
+  --accent-color: #1b9cb8;
+  --black-color: #fff;
+  /* Dark Theme Backgrounds & Texts */
+  --bg-color: #12181b;
+  /* Deep Dark Slate */
+  --card-bg: #1e262b;
+  /* Dark Slate Cards/Sections */
+  --text-color: #f1f5f9;
+  /* Light Off-White Text */
+  --text-muted: #94a3b8;
+  /* Muted Gray Text */
+  --border-color: #2d3748;
+  /* Dark Borders */
+
+  --surface-color: #161d22;
+  --content-bg: #1e262b;
+  --heading-color: #f1f5f9;
+  --link-color: #5ec4db;
+  --link-hover-color: #8ed9ea;
+  --input-bg: #1e262b;
+  --input-border: #334155;
+  --input-text: #f1f5f9;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --header-bar-bg: #0a5a6f;
+  --footer-top-bg: #0a5a6f;
+  --gold-accent: #d4a347;
+  --muted-text-light: #cbd5e1;
+  --divider-color: #334155;
+  --sidebar-hover-bg: #252d33;
+  --vision-box-bg: #1a2830;
+  --mission-box-bg: #2a2418;
+}
+
+html {
+  font-size: calc(16px * var(--font-scale, 1));
+}
+
+/* Base Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Cairo", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  direction: rtl;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+
+/* Global Container */
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

@@ -1,0 +1,43 @@
+{
+  "name": "react-drupal-project",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.7",
+    "@tailwindcss/vite": "^4.2.2",
+    "aos": "^2.3.4",
+    "axios": "^1.6.2",
+    "chart.js": "^4.5.1",
+    "embla-carousel-react": "^8.6.0",
+    "lucide-react": "^1.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-router-dom": "^6.30.6",
+    "recharts": "^3.8.1",
+    "spinners-react": "^1.0.11",
+    "sweetalert2": "^11.26.21",
+    "swiper": "^12.1.0",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.0.8"
+  }
+}
